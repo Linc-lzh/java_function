@@ -9,6 +9,7 @@ public class TestSerializable {
     public static void main(String[] args) throws Exception {
         // 可序列化的函数对象
         Type1 lambda = (Type1 & Serializable) stu -> stu.getName();
+        // Type1 lambda = (Type1 & Serializable) Student::getName;
 
         // 函数对象 <=> 字节码   会额外存储类和方法的信息, 运行时就可以根据这些信息找到属性, 从而进一步确定【列名】
         /*for (Method method : lambda.getClass().getDeclaredMethods()) {
